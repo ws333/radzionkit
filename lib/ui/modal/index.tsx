@@ -17,6 +17,7 @@ export type ModalProps = AsProp &
   Omit<ComponentProps<typeof Container>, 'title'> &
   TitleProp & {
     onClose?: () => void
+    noCloseOnClickBackdrop?: boolean
     subTitle?: ReactNode
     placement?: ModalPlacement
     footer?: ReactNode
@@ -43,6 +44,7 @@ export const Modal = ({
   title,
   children,
   onClose,
+  noCloseOnClickBackdrop,
   footer,
   subTitle,
   as,
@@ -50,7 +52,7 @@ export const Modal = ({
 }: ModalProps) => {
   return (
     <BodyPortal>
-      <Backdrop onClose={onClose}>
+      <Backdrop onClose={noCloseOnClickBackdrop ? undefined : onClose}>
         <Container forwardedAs={as} {...rest}>
           <VStack gap={8}>
             <HStack alignItems="start" justifyContent="space-between" gap={16}>

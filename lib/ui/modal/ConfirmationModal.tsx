@@ -7,6 +7,7 @@ import { Modal, ModalProps } from '.'
 type ConfirmationModalProps = Omit<ModalProps, 'footer' | 'onClose'> &
   TitleProp & {
     onClose: () => void
+    noCloseOnClickBackdrop?: boolean
     onConfirm: () => void
     confirmActionText: string
     confirmActionKind?: ButtonKind
