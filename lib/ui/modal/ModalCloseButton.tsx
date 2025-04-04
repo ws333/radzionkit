@@ -8,14 +8,18 @@ import { CloseIcon } from '../icons/CloseIcon'
 import { OnClickProp } from '../props'
 import { getColor } from '../theme/getters'
 
+const size = 24
+
 const IconWrapper = styled.div`
-  font-size: 20px;
-  ${sameDimensions(24)};
+  ${sameDimensions(size)};
   ${centerContent};
   ${transition};
+  font-size: ${size.toString()}px;
 `
 
 const Container = styled(Hoverable)`
+  padding: 0 !important;
+  min-height: ${size.toString()}px !important;
   color: ${getColor('contrast')};
   &:hover ${IconWrapper} {
     color: ${getColor('contrast')};
