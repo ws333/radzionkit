@@ -23,17 +23,19 @@ export interface MenuOptionProps {
   onSelect: () => void
   kind?: MenuOptionKind
   view?: MenuView
+  verticalPadding?: number
 }
 
 interface ContentProps {
   kind: MenuOptionKind
+  vPadding?: number
 }
 
 const Content = styled(HStack)<ContentProps>`
   ${transition};
   ${borderRadius.s}
   width: 100%;
-  ${verticalPadding(8)};
+  ${({ vPadding }) => verticalPadding(vPadding || 2)};
   align-items: center;
   gap: 12px;
 
@@ -61,11 +63,12 @@ export const MenuOption = ({
   isSelected,
   kind = 'regular',
   view = 'popover',
+  verticalPadding,
 }: MenuOptionProps) => {
   if (view === 'popover') {
     return (
       <Hoverable verticalOffset={0} onClick={onSelect}>
-        <Content kind={kind}>
+        <Content kind={kind} vPadding={verticalPadding}>
           <Text style={{ display: 'flex' }}>{icon}</Text>
           <Text>{text}</Text>
         </Content>
