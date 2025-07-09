@@ -15,8 +15,8 @@
     "@lib/utils": "workspace:*",
     "@tanstack/react-query": "^5.69.0",
     "date-fns": "^4.1.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "react-dropzone": "^14.3.8",
     "react-focus-lock": "^2.13.6",
     "styled-components": "^6.1.16"
@@ -25,8 +25,8 @@
     "@svgr/core": "^8.1.0",
     "@svgr/plugin-jsx": "^8.1.0",
     "@types/node": "^22.13.14",
-    "@types/react": "^19.0.12",
-    "@types/react-dom": "^19.0.4",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.1",
     "pwa-asset-generator": "^8.0.0"
   }
 }
