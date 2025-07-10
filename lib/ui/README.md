@@ -4,40 +4,18 @@ This package provides a comprehensive library of React components and hooks, met
 
 ## Getting Started
 
-1. **For NextJS Projects Only:** Update your `_document.tsx` file by extending the `StyledComponentsDocument` from the `@lib/next-ui` package, in order to integrate support for the `styled-components` library used in the `@lib/ui` package.
-
-```tsx
-import { StyledComponentsDocument } from '@lib/next-ui/StyledComponentsDocument'
-
-class MyDocument extends StyledComponentsDocument {
-  // ...
-}
-```
-
-2. **For NextJS Projects Only:** Update your `next.config.js` to set `styledComponents` to `true` in the compiler options for proper styling, and include UI package in `transpilePackages` to ensure Next.js correctly compiles and includes the UI package from the monorepo.
-
-```javascript
-const nextConfig = {
-  // ...
-  compiler: {
-    styledComponents: true,
-  },
-  transpilePackages: ['@lib/ui'],
-}
-```
-
-3. Add a `styled.d.ts` to your project and include the following content to integrate RadzionKit's theme with `styled-components`' default theme:
+1. Add a `styled.d.ts` to your project and include the following content to integrate this package's theme with `styled-components`' default theme:
 
 ```typescript
-import 'styled-components';
-import { Theme } from '@lib/ui/theme/Theme';
+import 'styled-components'
+import { Theme } from '@lib/ui/theme/Theme'
 
 declare module 'styled-components' {
   export interface DefaultTheme extends Theme {}
 }
 ```
 
-4. **Add `persistentState` File for Local Storage Interaction:** Place a `persistentState` file in the `state` folder of your app package to enhance local storage interaction.
+2. **Add `persistentState` File for Local Storage Interaction:** Place a `persistentState` file in the `state` folder of your app package to enhance local storage interaction.
 
 ```tsx
 import { TemporaryStorage } from '@lib/ui/state/TemporaryStorage'
@@ -61,12 +39,15 @@ export const managePersistentState =
   createPersistentStateManager<PersistentStateKey>(persistentStorage)
 ```
 
-5. **Implement `ThemeProvider` and `GlobalStyle` in Your App:** In your application, use the `ThemeProvider` from RadzionKit to manage theme changes and store user preferences with the `usePersistentState` hook. Include the `GlobalStyle` component to apply global CSS styles, such as font family and custom scrollbars, ensuring a consistent look and feel across your app.
+3. **Implement `ThemeProvider` and `GlobalStyle` in Your App:** In your application, use the `ThemeProvider` from this package to manage theme changes and store user preferences with the `usePersistentState` hook. Include the `GlobalStyle` component to apply global CSS styles, such as font family and custom scrollbars, ensuring a consistent look and feel across your app.
 
 ```tsx
 import { GlobalStyle } from '@lib/ui/css/GlobalStyle'
 import { Inter } from 'next/font/google'
-import { PersistentStateKey, usePersistentState } from '@product/ui-demo/state/persistentState'
+import {
+  PersistentStateKey,
+  usePersistentState,
+} from '@product/ui-demo/state/persistentState'
 import { ThemePreference } from '@lib/ui/theme/ThemePreference'
 import { DarkLightThemeProvider } from '@lib/ui/theme/DarkLightThemeProvider'
 

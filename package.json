@@ -1,7 +1,7 @@
 {
-  "name": "radzionkit",
+  "name": "ui-kit",
   "packageManager": "yarn@4.7.0",
-  "version": "0.0.1",
+  "version": "0.2.1",
   "private": true,
   "workspaces": [
     "./lib/**"
@@ -67,8 +67,9 @@
   },
   "scripts": {
     "build": "tsc -b lib/utils lib/codegen lib/ui",
-    "clean": "rm -rf dist lib/*/dist",
-    "pack": "npm run clean && npm run build && npm pack",
+    "clean": "sh ./cleanRepoThenPack.sh",
+    "clean:build": "rm -rf dist lib/*/dist",
+    "pack": "npm run clean:build && npm run build && npm pack",
     "postinstall": "command -v husky >/dev/null 2>&1 && husky install || echo 'Husky not installed, skipping'",
     "format": "eslint --fix && prettier --write",
     "typecheck": "tsc --noEmit",
