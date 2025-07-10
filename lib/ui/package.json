@@ -15,11 +15,13 @@
     "@lib/utils": "workspace:*",
     "@tanstack/react-query": "^5.69.0",
     "date-fns": "^4.1.0",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
     "react-dropzone": "^14.3.8",
     "react-focus-lock": "^2.13.6",
     "styled-components": "^6.1.16"
+  },
+  "peerDependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@svgr/core": "^8.1.0",
