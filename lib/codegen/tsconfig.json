@@ -4,8 +4,11 @@
     "rootDir": ".",
     "outDir": "dist",
     "declaration": true,
-    "emitDeclarationOnly": true,
+    "emitDeclarationOnly": false,
     "composite": true,
+    "module": "CommonJS",
+    "target": "ES2020",
+    "moduleResolution": "node10",
     "paths": {
       "@lib/utils/*": ["../utils/*"],
       "@lib/codegen/*": ["./*"]
