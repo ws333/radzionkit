@@ -64,6 +64,7 @@ export { Spinner } from './loaders/Spinner'
 export { Text, text, type TextColor, type TextProps } from './text'
 export { Tooltip } from './tooltips/Tooltip'
 
+export { BookIcon } from './icons/BookIcon'
 export { DownloadIcon } from './icons/DownloadIcon'
 export { EditIcon } from './icons/EditIcon'
 export { InfoIcon } from './icons/InfoIcon'
